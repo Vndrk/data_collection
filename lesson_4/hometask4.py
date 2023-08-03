@@ -29,6 +29,7 @@ for i in last_24_news_refs:
     date = dom.xpath("//a[contains(@class, 'topic-header__time')]/text()")
     news_item['title'] = title
     news_item['ref'] = ref
+    news_item['date'] = date
     str_hash = str(title + date)
     str_hash = bytes(str_hash, encoding='utf-8')
     news_item['_id'] = str_hash
@@ -44,6 +45,7 @@ for i in main_news_refs:
     date = dom.xpath("//a[contains(@class, 'topic-header__time')]/text()")
     main_news_item['title'] = title
     main_news_item['ref'] = ref
+    main_news_item['date'] = date
     str_hash = str(title + date)
     str_hash = bytes(str_hash, encoding='utf-8')
     main_news_item['_id'] = str_hash
@@ -66,3 +68,4 @@ for news in main_news:
 
 for i in lenta_posts.find({}):
     pprint(i)
+
